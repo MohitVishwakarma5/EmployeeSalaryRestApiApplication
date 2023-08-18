@@ -127,5 +127,10 @@ public class EmployeeServiceImp implements EmployeeService {
 		return repo.save(e);
 	}
 
-	
-}
+	@Override
+	public List<EmployeeModel> getEmployeeSalary(double salary) {
+		return repo.findBySalary(salary);
+	}
+		
+	}
+

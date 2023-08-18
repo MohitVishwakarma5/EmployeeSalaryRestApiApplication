@@ -1,7 +1,6 @@
 package com.web.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.web.model.EmployeeModel;
 
@@ -12,4 +11,7 @@ public interface EmployeeService {
 	public List<EmployeeModel> getAllemployee();
 	public EmployeeModel deleteEmployee(Integer eid);
 	public EmployeeModel updateEmployee(EmployeeModel employee,Integer eid);
+	public List<EmployeeModel> getEmployeeSalary(double salary);
+	
+	
 }

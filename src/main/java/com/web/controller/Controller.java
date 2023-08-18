@@ -40,7 +40,7 @@ public class Controller {
 	public List<EmployeeModel> getAllEmployee(){
 		return service.getAllemployee();
 	}
-	@DeleteMapping("delete/{eid}")
+	@DeleteMapping("/delete/{eid}")
 	public String deleteEmployee(@PathVariable Integer eid)
 	{
 	  EmployeeModel e2 = service.deleteEmployee(eid);
@@ -50,9 +50,13 @@ public class Controller {
 	  }
 	  return text;
 	}
-	@PutMapping("update/{eid}")
+	@PutMapping("/update/{eid}")
 	public EmployeeModel updateEmployee(@RequestBody EmployeeModel employee,@PathVariable Integer eid)
 	{
 		return service.updateEmployee(employee, eid);
+	}
+	@GetMapping("/find/{salary}")
+	public List<EmployeeModel> getEmployeeSalary(@PathVariable double salary) {
+		return service.getEmployeeSalary(salary);
 	}
 }
